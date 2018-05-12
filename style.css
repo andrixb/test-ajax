@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #292833;
+    background-color: #D8EFF0;
+}
+
+.app-holder {
+    display: flex;
+    height: 100%;
+    ;
+}
+
+.facts-holder,
+.wait {
+    height: 100%;
+}
+
+.wait {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #D8EFF0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: left;
+    z-index: 2;
+}
+
+.wait-spinner {
+    border: 16px solid #292833;
+    border-top: 16px solid #ADAD8B;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.facts-holder {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.facts-loader {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.facts-loader button {
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #ADAD8B;
+    color: #ecf0f1;
+    transition: background-color .3s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+}
+
+.facts-loader button:hover,
+.facts-loader button:focus {
+    background-color: #3F5757;
+}
+
+.facts-text h1 {
+    margin-bottom: 20px;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu-holder {
+    position: relative;
+    width: 100px;
+    height: 100%;
+    background-color: #292833;
+    transition: width 0.2s ease-in;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-box-shadow: -15px 1px 12px -9px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: -15px 1px 12px -9px rgba(0, 0, 0, 0.22);
+    box-shadow: -15px 1px 12px -9px rgba(0, 0, 0, 0.22);
+}
+
+.menu-holder:hover {
+    width: 250px;
+    transition: width 0.2s ease-in;
+}

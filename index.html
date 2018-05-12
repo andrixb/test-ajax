@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <section class="app-holder">
+        <div class="wait">
+            <div class="wait-spinner"></div>
+        </div>
+        <div id="js-wrapper" class="facts-holder"></div>
+        <nav class="menu">
+            <div class="menu-holder">
+                <div class="facts-loader">
+                    <button class="facts-loader__btn">New Fact</button>
+                    <button class="facts-loader__btn js-timer">Timed Facts</button>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/facts.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
