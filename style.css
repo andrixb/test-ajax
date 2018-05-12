@@ -99,6 +99,10 @@ body {
     background-color: #3F5757;
 }
 
+.facts-loader__slider-text {
+    color: #ecf0f1;
+}
+
 .facts-text h1 {
     margin-bottom: 20px;
 }
@@ -128,4 +132,14 @@ body {
 .menu-holder:hover {
     width: 250px;
     transition: width 0.2s ease-in;
+}
+
+.menu-holder:hover + .facts-loader__slider-text,  .menu-holder:hover + .menu-element-hidden{
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.menu-element-hidden, .facts-loader__slider-text {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }

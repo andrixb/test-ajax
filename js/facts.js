@@ -7,12 +7,16 @@ $.factsApp.Facts = (() => {
         TARGET: '#js-wrapper',
         BUTTON: '.facts-loader > .facts-loader__btn',
         TIMER_BTN: '.js-timer',
+        FILTER: '.js-facts-filter',
+        COUNTER: '.js-counter',
         FREQUENCY: 5000,
         wrapper: null,
         loader: null,
         timer: null,
         document: null,
-        testResponse: null
+        testResponse: null,
+        filter: null,
+        counter: null
     };
 
     let _templateFact = (data) => {
@@ -28,13 +32,21 @@ $.factsApp.Facts = (() => {
         _params.wrapper = $(_params.TARGET);
         _params.loader = $(_params.BUTTON);
         _params.timerBtn = $(_params.TIMER_BTN);
+        _params.filter = $(_params.FILTER);
+        _params.counter = $(_params.COUNTER);
 
         _invokeAjax(_params, _retrieveData);
+        _initRendering();
 
         _bindCustomNotifications($document, _onDataResponse);
+        _bindSliderChange(_params.filter, _params.counter);
         _bindMouseActivatedAjaxEvents(_params.loader);
         _bindTimeActivatedAjaxEvents(_params.timerBtn, _params.FREQUENCY);
     };
+
+    let _initRendering = () => {
+        _params.counter.html(_params.filter[0].value)
+    }
 
     let _bindMouseActivatedAjaxEvents = (element) => {
         element.click((event) => {
@@ -43,6 +55,12 @@ $.factsApp.Facts = (() => {
                 _params.timer = null;
             }
             _invokeAjax(_params, _retrieveData);
+        });
+    };
+
+    let _bindSliderChange = (element, display) => {
+        element.on('input', (event) => {
+            display.html(event.target.value);
         });
     };
 
@@ -78,7 +96,7 @@ $.factsApp.Facts = (() => {
     let _onDataResponse = (event, data) => {
         console.log('Data have changed: ', data);
 
-        data['value'].length < 100 ? 
+        data['value'].length < _params.filter[0].value ? 
             _invokeAjax(_params, _retrieveData) : 
             console.log('No new fetch ', data['value'].length );
     };
