@@ -1,6 +1,7 @@
 'use-strict';
 
 $.factsApp = $.factsApp || {};
+
 $.factsApp.Facts = (() => {
     const _params = {
         URL: 'https://api.chucknorris.io/jokes/random',
@@ -45,7 +46,7 @@ $.factsApp.Facts = (() => {
     };
 
     let _initRendering = () => {
-        _params.counter.html(_params.filter[0].value)
+        _params.counter.html(_params.filter[0].value);
     }
 
     let _bindMouseActivatedAjaxEvents = (element) => {
@@ -94,11 +95,13 @@ $.factsApp.Facts = (() => {
     };
 
     let _onDataResponse = (event, data) => {
-        console.log('Data have changed: ', data);
+        console.log('Data has been changed: ', data);
+        
+        let value = _params.filter[0].value;
 
-        data['value'].length < _params.filter[0].value ? 
+        data['value'].length < value ? 
             _invokeAjax(_params, _retrieveData) : 
-            console.log('No new fetch ', data['value'].length );
+            console.log('No new fetch ', data['value'].length);
     };
 
     return {

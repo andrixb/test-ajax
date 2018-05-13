@@ -1,6 +1,7 @@
 'use-strict';
 
 $.factsApp = $.factsApp || {};
+
 $.factsApp.Utils = (() => {
     const _params = {};
 
