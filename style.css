@@ -16,9 +16,7 @@ body {
 }
 
 .app-holder {
-    display: flex;
     height: 100%;
-    ;
 }
 
 .facts-holder,
@@ -134,12 +132,12 @@ body {
     transition: width 0.2s ease-in;
 }
 
-.menu-holder:hover + .facts-loader__slider-text,  .menu-holder:hover + .menu-element-hidden{
+.menu-holder:hover .facts-loader__slider-text, .menu-holder:hover .menu-element-hidden{
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
 
 .menu-element-hidden, .facts-loader__slider-text {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
