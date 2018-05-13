@@ -13,6 +13,7 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #292833;
     background-color: #D8EFF0;
+    overflow: hidden;
 }
 
 .app-holder {
